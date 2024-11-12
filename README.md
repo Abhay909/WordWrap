@@ -23,24 +23,7 @@ The **Keyboard Challenge** is a simple interactive web game built using HTML, CS
 4. If the input is incorrect, an error message will appear, and the game will prompt you to try again.
 5. Continue typing until the game ends, and your final score will be displayed.
 
-## Installation
 
-### To run this project locally:
-
-1. **Clone the repository:**
-git clone https://github.com/abhayk909/wordwrap.git
-
-markdown
-Copy code
-
-2. **Navigate into the project folder:**
-cd keyboard-challenge
-
-vbnet
-Copy code
-
-3. **Open `index.html` in your browser:**
-- You can open the `index.html` file directly in your browser to start playing.
 
 ## License
 This project is licensed by me. You are free to use, modify, and distribute the code, but please include this license and attribution in your project.
