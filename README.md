@@ -28,7 +28,7 @@ The **Keyboard Challenge** is a simple interactive web game built using HTML, CS
 ### To run this project locally:
 
 1. **Clone the repository:**
-git clone https://github.com/YOUR_USERNAME/keyboard-challenge.git
+git clone https://github.com/abhayk909/wordwrap.git
 
 markdown
 Copy code
