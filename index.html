@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Word Warp</h1>
+
+    <!-- Challenge Sentence Display -->
+    <p id="challengeSentence">Challenge: <span id="sentenceText"></span></p>
+
+    <!-- Timer Display -->
+    <p id="timerDisplay">Time: 0s</p>
+
+    <!-- Typing Area -->
+    <textarea id="typingArea" placeholder="Start typing here..."></textarea>
+
+    <!-- Error Message -->
+    <div id="errorMessage" class="hidden">
+      <p>Oops! Something went wrong. Try again.</p>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden">
+      <p>🎉 Congratulations! You've completed the challenge!</p>
+      <p id="completionTime"></p>
+      <button id="playAgainButton">Play Again</button>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="notes-section">
+      <h2>Notes</h2>
+      <textarea id="notesArea">
+A →
+B →
+C →
+D →
+E →
+F →
+G →
+H →
+I →
+J →
+K →
+L →
+M →
+N →
+O →
+P →
+Q →
+R →
+S →
+T →
+U →
+V →
+W →
+X →
+Y →
+Z →
+      </textarea>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+      <button id="darkModeToggle">Toggle Dark Mode</button>
+      <button id="resetButton">Reset</button>
+      <button id="submitButton">Submit</button>
+    </div>
+
+    <!-- Instructions Box -->
+    <div id="instructionsBox" class="info-box">
+      <p>All words in the challenge are exactly 15 characters long. Everything is fair!</p>
+    </div>
+
+    
+  </div>
+
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="abhaykapatkar" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
