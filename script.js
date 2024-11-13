@@ -158,27 +158,60 @@ const sentences = [
     "i read new books"       // 15 characters
 ]
 
+
 let startTime;
 let timerInterval;
 let currentMapping = generateRandomMapping();
 
 // Function to get a random sentence
 function getRandomSentence() {
-    const index = Math.floor(Math.random() * sentences.length);
-    return sentences[index];
+  const index = Math.floor(Math.random() * sentences.length);
+  return sentences[index];
 }
 
-// Function to check if the challenge is completed
+// Function to normalize input (removes extra spaces and allows slight tolerance)
+function normalizeInput(input) {
+    return input.trim().replace(/\s+/g, ' ').toLowerCase(); // Remove extra spaces and convert to lowercase
+}
+
+// Function to check if the challenge is completed with case slack
 function checkCompletion() {
     const typingArea = document.getElementById("typingArea");
     const challengeSentence = document.getElementById("sentenceText").textContent.trim();
 
-    if (typingArea.value.trim() === challengeSentence) {
+    // Normalize both the user input and the challenge sentence
+    const userInput = typingArea.value.trim();
+
+    // Check if they match in terms of characters and case type
+    if (isValidMatch(userInput, challengeSentence)) {
         clearInterval(timerInterval); // Stop the timer
         showCompletionMessage();
     } else {
         showError(); // Show error message if the input is incorrect
     }
+}
+
+// Function to check if input matches the challenge sentence considering the case type
+function isValidMatch(userInput, challengeSentence) {
+    if (userInput.length !== challengeSentence.length) return false;
+
+    for (let i = 0; i < userInput.length; i++) {
+        const userChar = userInput[i];
+        const challengeChar = challengeSentence[i];
+
+        // Check if the letters match but ignore case differences
+        if (userChar.toLowerCase() !== challengeChar.toLowerCase()) {
+            return false;
+        }
+
+        // Ensure that the letter's case is correct (match uppercase with uppercase, lowercase with lowercase)
+        if ((userChar === userChar.toUpperCase() && challengeChar !== challengeChar.toUpperCase()) ||
+            (userChar === userChar.toLowerCase() && challengeChar !== challengeChar.toLowerCase())) {
+            return false;
+        }
+    }
+
+    return true;  // If all checks pass, the input is correct
 }
 
 // Display the success message and time taken
@@ -201,30 +234,30 @@ function showError() {
 }
 // Reset the challenge and clear the text areas
 function resetChallenge() {
-    document.getElementById("typingArea").value = '';
-    document.getElementById("notesArea").value = generateAlphabetSequence();
-    document.getElementById("sentenceText").textContent = getRandomSentence();
-    document.getElementById("successMessage").style.display = 'none';  // Hide success message on reset
-    document.getElementById("timerDisplay").textContent = "Time: 0s";
-    clearInterval(timerInterval);
-    startTime = undefined;
-    document.getElementById("errorMessage").style.display = 'none'; // Hide error message on reset
+  document.getElementById("typingArea").value = '';
+  document.getElementById("notesArea").value = generateAlphabetSequence();
+  document.getElementById("sentenceText").textContent = getRandomSentence();
+  document.getElementById("successMessage").style.display = 'none';  // Hide success message on reset
+  document.getElementById("timerDisplay").textContent = "Time: 0s";
+  clearInterval(timerInterval);
+  startTime = undefined;
+  document.getElementById("errorMessage").style.display = 'none'; // Hide error message on reset
 }
 
 // Generate the alphabet sequence with arrows
 function generateAlphabetSequence() {
-    let alphabetText = '';
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    for (let i = 0; i < alphabet.length; i++) {
-        alphabetText += alphabet[i] + ' ->\n';
-    }
-    return alphabetText;
+  let alphabetText = '';
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  for (let i = 0; i < alphabet.length; i++) {
+      alphabetText += alphabet[i] + ' ->\n';
+  }
+  return alphabetText;
 }
 
 // Get elapsed time in seconds
 function getElapsedTime() {
-    const endTime = new Date();
-    return Math.round((endTime - startTime) / 1000);
+  const endTime = new Date();
+  return Math.round((endTime - startTime) / 1000);
 }
 
 // Reset Button functionality
@@ -238,38 +271,38 @@ document.getElementById("playAgainButton").addEventListener("click", resetChalle
 
 // Randomly map letters for typing area
 function generateRandomMapping() {
-    const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    const randomized = [...letters].sort(() => Math.random() - 0.5);
-    const mapping = {};
-    letters.forEach((letter, index) => {
-        mapping[letter] = randomized[index];
-    });
-    return mapping;
+  const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const randomized = [...letters].sort(() => Math.random() - 0.5);
+  const mapping = {};
+  letters.forEach((letter, index) => {
+      mapping[letter] = randomized[index];
+  });
+  return mapping;
 }
 
 const typingArea = document.getElementById("typingArea");
 
 typingArea.addEventListener("keydown", (event) => {
-    const char = event.key.toLowerCase();
-    if (currentMapping[char]) {
-        event.preventDefault();
-        typingArea.value += currentMapping[char];
-    }
-    // Start the timer on the first keystroke
-    if (!startTime) {
-        startTime = new Date();
-        timerInterval = setInterval(updateTimer, 1000);
-    }
+  const char = event.key.toLowerCase();
+  if (currentMapping[char]) {
+      event.preventDefault();
+      typingArea.value += currentMapping[char];
+  }
+  // Start the timer on the first keystroke
+  if (!startTime) {
+      startTime = new Date();
+      timerInterval = setInterval(updateTimer, 1000);
+  }
 });
 
 // Timer update function
 function updateTimer() {
-    document.getElementById("timerDisplay").textContent = `Time: ${getElapsedTime()}s`;
+  document.getElementById("timerDisplay").textContent = `Time: ${getElapsedTime()}s`;
 }
 
 // Reset mapping every 24 hours
 setInterval(() => {
-    currentMapping = generateRandomMapping();
+  currentMapping = generateRandomMapping();
 }, 86400000);
 
 // Display a random challenge sentence on load and reset notes area
@@ -281,13 +314,13 @@ const darkModeToggle = document.getElementById("darkModeToggle");
 const body = document.body;
 
 darkModeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    body.classList.toggle("light-mode");
-    document.getElementById("typingArea").classList.toggle("dark-mode");
-    document.getElementById("notesArea").classList.toggle("dark-mode");
-    darkModeToggle.classList.toggle("dark-mode");
-    darkModeToggle.classList.toggle("light-mode");
-    darkModeToggle.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
+  body.classList.toggle("dark-mode");
+  body.classList.toggle("light-mode");
+  document.getElementById("typingArea").classList.toggle("dark-mode");
+  document.getElementById("notesArea").classList.toggle("dark-mode");
+  darkModeToggle.classList.toggle("dark-mode");
+  darkModeToggle.classList.toggle("light-mode");
+  darkModeToggle.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
 });
 
 // Initial Theme Set
