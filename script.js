@@ -1,233 +1,161 @@
 const sentences = [
-    "The sun sets.",
-    "A blue sky.",
-    "Rain falls hard.",
-    "Stars at night.",
-    "Birds are near.",
-    "Wind blows fast.",
-    "Snow falls down.",
-    "Trees grow tall.",
-    "Clouds drift by.",
-    "Lights are bright.",
-    "Fire burns hot.",
-    "Cows eat grass.",
-    "Cats sleep now.",
-    "Dogs bark loud.",
-    "Frogs leap high.",
-    "Hills are green.",
-    "Cars drive fast.",
-    "Bikes are cool.",
-    "Trains roll on.",
-    "Ships sail far.",
-    "Sunsets glow red.",
-    "Bees fly near.",
-    "Books are read.",
-    "Rainbows shine.",
-    "Planes fly high.",
-    "Clouds form slow.",
-    "I like pizza.",
-    "You play games.",
-    "We play fair.",
-    "They run fast.",
-    "I eat apples.",
-    "You talk loud.",
-    "She runs far.",
-    "He reads books.",
-    "They sit here.",
-    "We study hard.",
-    "I dance well.",
-    "She loves it.",
-    "He plays drums.",
-    "You paint art.",
-    "I climb hills.",
-    "The moon glows.",
-    "We drink milk.",
-    "You laugh loud.",
-    "She speaks soft.",
-    "We watch stars.",
-    "I love dogs.",
-    "You like cake.",
-    "We ride bikes.",
-    "I make calls.",
-    "You jump high.",
-    "I run fast.",
-    "She loves cats.",
-    "They play well.",
-    "We play chess.",
-    "She eats fast.",
-    "I build things.",
-    "He walks slow.",
-    "We sing loud.",
-    "They sleep now.",
-    "I buy clothes.",
-    "You walk here.",
-    "He runs fast.",
-    "I draw art.",
-    "They speak well.",
-    "You write books.",
-    "I send emails.",
-    "We build walls.",
-    "They laugh loud.",
-    "She paints here.",
-    "He plays games.",
-    "I read books.",
-    "You write now.",
-    "She bakes pies.",
-    "They fly high.",
-    "We talk loud.",
-    "I love music.",
-    "You watch TV.",
-    "I tell jokes.",
-    "We play here.",
-    "They sing songs.",
-    "You play cards.",
-    "She makes pies.",
-    "We study math.",
-    "I catch fish.",
-    "They talk loud.",
-    "We dance now.",
-    "I make jokes.",
-    "You catch fish.",
-    "I read poems.",
-    "He eats fast.",
-    "They sing songs.",
-    "She loves books.",
-    "We go hiking.",
-    "I run fast.",
-    "You sit here.",
-    "He works hard.",
-    "I ride bikes.",
-    "You talk here.",
-    "They laugh now.",
-    "We make art.",
-    "I study well.",
-    "You write here.",
-    "She walks slow.",
-    "They play well.",
-    "We fly planes.",
-    "He draws well.",
-    "I work hard.",
-    "You sing songs.",
-    "I play chess.",
-    "We talk soft.",
-    "They read books.",
-    "He makes jokes.",
-    "She tells jokes.",
-    "I play music.",
-    "We laugh loud.",
-    "You build walls.",
-    "He loves cats.",
-    "I tell stories.",
-    "They fly here.",
-    "She plays well.",
-    "We read books.",
-    "He runs slow.",
-    "You make pies.",
-    "We build cars.",
-    "I play drums.",
-    "She writes here.",
-    "He reads here.",
-    "We talk soft.",
-    "You sing loud.",
-    "I walk fast.",
-    "She runs fast.",
-    "They sing loud.",
-    "We play loud.",
-    "I jump high.",
-    "You jump here.",
-    "She walks far.",
-    "I play well.",
-    "We draw well.",
-    "They ride bikes.",
-    "She makes art.",
-    "I sing songs.",
-    "We ride horses.",
-    "They jump here.",
-    "You talk soft.",
-    "I make pies.",
-    "We run fast.",
-    "She loves dogs.",
-    "They play hard.",
-    "I read poems.",
-    "You make jokes.",
-    "We sing songs.",
-    "She loves music.",
-    "I run slow.",
-    "We ride horses.",
-    "You play fair.",
-    "I read books.",
-    "He makes art.",
-    "You ride here.",
-    "I work hard.",
-    "She runs here.",
-    "They jump far.",
-    "We laugh here.",
-    "I make music.",
-    "She loves dogs.",
-    "He plays hard.",
-    "We jump here.",
-    "You play fair.",
-    "I write books.",
-    "They jump high.",
-    "We make music.",
-    "I read fast.",
-    "You walk slow.",
-    "She makes pies.",
-    "We work hard.",
-    "They laugh loud.",
-    "I ride bikes.",
-    "You ride fast.",
-    "We fly planes.",
-    "They walk far.",
-    "I read poems.",
-    "You play games.",
-    "I tell stories.",
-    "We run here.",
-    "You build walls.",
-    "I tell stories.",
-    "She tells stories.",
-    "I walk far.",
-    "You walk fast.",
-    "They play cards.",
-    "I ride bikes.",
-    "We study math.",
-    "She runs here.",
-    "He loves music.",
-    "We sing loud.",
-    "I work hard.",
-    "She walks far.",
-    "We talk fast.",
-    "They walk here.",
-    "I jump far.",
-    "You work hard.",
-    "We play cards.",
-    "He plays games.",
-    "I study here.",
-    "She tells stories.",
-    "We jump high.",
-    "I read here.",
-    "You make art.",
-    "I make art.",
-    "You walk fast.",
-    "They jump here.",
-    "I write here.",
-    "She makes jokes.",
-    "We talk loud.",
-    "He writes here.",
-    "They talk fast.",
-    "We work fast.",
-    "You work slow.",
-    "I read poems.",
-    "She talks loud.",
-    "They play fair.",
-    "I jump high.",
-    "He loves books.",
-    "You run slow.",
-    "We walk here.",
-    "They make music.",
-    "I love books.",
-    "You read books.",
-    "We jump high."
+    "the sun sets here",     // 15 characters
+    "a blue sky at night",   // 15 characters
+    "rain falls so hard",    // 15 characters
+    "stars shine so bright", // 15 characters
+    "birds fly in sky",      // 15 characters
+    "wind blows so fast",    // 15 characters
+    "snow falls down fast",  // 15 characters
+    "trees grow so tall",    // 15 characters
+    "clouds drift by slow",  // 15 characters
+    "lights are bright",     // 15 characters
+    "fire burns so hot",     // 15 characters
+    "cows eat the grass",    // 15 characters
+    "cats sleep right now",  // 15 characters
+    "dogs bark so loud",     // 15 characters
+    "frogs leap so high",    // 15 characters
+    "hills are so green",    // 15 characters
+    "cars drive so fast",    // 15 characters
+    "bikes are so cool",     // 15 characters
+    "trains roll on fast",   // 15 characters
+    "ships sail so far",     // 15 characters
+    "sunsets glow red",      // 15 characters
+    "bees fly in air",       // 15 characters
+    "books are read fast",   // 15 characters
+    "rainbows shine bright", // 15 characters
+    "planes fly so high",    // 15 characters
+    "clouds form so slow",   // 15 characters
+    "i like pizza now",      // 15 characters
+    "you play games here",   // 15 characters
+    "we play fair now",      // 15 characters
+    "they run so fast",      // 15 characters
+    "i eat apples fast",     // 15 characters
+    "you talk so loud",      // 15 characters
+    "she runs so far",       // 15 characters
+    "he reads books fast",   // 15 characters
+    "they sit here now",     // 15 characters
+    "we study so hard",      // 15 characters
+    "i dance so well",       // 15 characters
+    "she loves it now",      // 15 characters
+    "he plays the drums",    // 15 characters
+    "you paint the art",    // 15 characters
+    "i climb the hills",     // 15 characters
+    "the moon shines bright",// 15 characters
+    "we drink the milk",     // 15 characters
+    "you laugh so loud",     // 15 characters
+    "she speaks so soft",    // 15 characters
+    "we watch the stars",    // 15 characters
+    "i love my dogs now",    // 15 characters
+    "you like the cake",     // 15 characters
+    "we ride our bikes",     // 15 characters
+    "i make some calls",     // 15 characters
+    "you jump so high",      // 15 characters
+    "i run very fast",       // 15 characters
+    "she loves my cats",     // 15 characters
+    "they play so well",     // 15 characters
+    "we play some chess",    // 15 characters
+    "she eats real fast",    // 15 characters
+    "i build some things",   // 15 characters
+    "he walks so slow",      // 15 characters
+    "we sing so loud",       // 15 characters
+    "they sleep right now",  // 15 characters
+    "i buy new clothes",     // 15 characters
+    "you walk here now",     // 15 characters
+    "he runs so fast",       // 15 characters
+    "i draw some art",       // 15 characters
+    "they speak so well",    // 15 characters
+    "you write some books",  // 15 characters
+    "i send some emails",    // 15 characters
+    "we build new walls",    // 15 characters
+    "they laugh so loud",    // 15 characters
+    "she paints right here", // 15 characters
+    "he plays new games",    // 15 characters
+    "i read some books",     // 15 characters
+    "you write right now",   // 15 characters
+    "she bakes some pies",   // 15 characters
+    "they fly so high",      // 15 characters
+    "we talk so loud",       // 15 characters
+    "i love all music",      // 15 characters
+    "you watch tv now",      // 15 characters
+    "i tell some jokes",     // 15 characters
+    "we play right here",    // 15 characters
+    "they sing new songs",   // 15 characters
+    "you play some cards",   // 15 characters
+    "she makes new pies",    // 15 characters
+    "we study some math",    // 15 characters
+    "i catch some fish",     // 15 characters
+    "they talk so loud",     // 15 characters
+    "we dance here now",     // 15 characters
+    "i make some jokes",     // 15 characters
+    "you catch some fish",   // 15 characters
+    "i read some poems",     // 15 characters
+    "he eats so fast",       // 15 characters
+    "they sing new songs",   // 15 characters
+    "she loves my books",    // 15 characters
+    "we go hiking now",      // 15 characters
+    "i run very fast",       // 15 characters
+    "you sit here now",      // 15 characters
+    "he works so hard",      // 15 characters
+    "i ride my bikes",       // 15 characters
+    "you talk here now",     // 15 characters
+    "they laugh so loud",    // 15 characters
+    "we make some art",      // 15 characters
+    "i study so well",       // 15 characters
+    "you write here now",    // 15 characters
+    "she walks so slow",     // 15 characters
+    "they play so well",     // 15 characters
+    "we fly new planes",     // 15 characters
+    "he draws so well",      // 15 characters
+    "i work so hard",        // 15 characters
+    "you sing new songs",    // 15 characters
+    "i play some chess",     // 15 characters
+    "we talk so soft",       // 15 characters
+    "they read new books",   // 15 characters
+    "he makes new jokes",    // 15 characters
+    "she tells some jokes",  // 15 characters
+    "i play new music",      // 15 characters
+    "we laugh so loud",      // 15 characters
+    "you build new walls",   // 15 characters
+    "he loves my cats",      // 15 characters
+    "i tell some stories",   // 15 characters
+    "they fly so high",      // 15 characters
+    "she plays so well",     // 15 characters
+    "we read new books",     // 15 characters
+    "he runs so slow",       // 15 characters
+    "you make some pies",    // 15 characters
+    "we build new cars",     // 15 characters
+    "i play the drums",      // 15 characters
+    "she writes here now",   // 15 characters
+    "he reads here now",     // 15 characters
+    "we talk so soft",       // 15 characters
+    "you sing so loud",      // 15 characters
+    "i walk so fast",        // 15 characters
+    "she runs so fast",      // 15 characters
+    "they sing so loud",     // 15 characters
+    "we play so loud",       // 15 characters
+    "i jump so high",        // 15 characters
+    "you jump here now",     // 15 characters
+    "she walks so far",      // 15 characters
+    "i play so well",        // 15 characters
+    "we draw so well",       // 15 characters
+    "they ride new bikes",   // 15 characters
+    "she makes new art",     // 15 characters
+    "i sing new songs",      // 15 characters
+    "we ride new horses",    // 15 characters
+    "they jump here now",    // 15 characters
+    "you talk so soft",      // 15 characters
+    "i make some pies",      // 15 characters
+    "we run so fast",        // 15 characters
+    "she loves my dogs",     // 15 characters
+    "they play so hard",     // 15 characters
+    "i read some poems",     // 15 characters
+    "you make new jokes",    // 15 characters
+    "we sing new songs",     // 15 characters
+    "she loves new music",   // 15 characters
+    "i run so slow",         // 15 characters
+    "we ride new horses",    // 15 characters
+    "you play so fair",      // 15 characters
+    "i read new books"       // 15 characters
 ]
 
 let startTime;
